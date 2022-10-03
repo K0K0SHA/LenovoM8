@@ -1,0 +1,90 @@
+/* 
+    Filename: mystyles.css
+    Created on : Sep 29, 2022, 1:14:01 PM
+    Author     : K0K0$H@
+    Version    : 0.4
+    Theme      : Built-in "Void" Dark
+*/ 
+
+body {
+  background-color: black;
+  background-image: url("img/wallpaper.jpg");
+}
+h1 {
+  font-family: courier, Helvetica, sans-serif;
+  text-align: left;
+  color: #c733ff;
+}
+
+
+
+h2 {
+    text-align: left;
+    color: skyblue;
+}
+
+p, li { /* This applies to two tags: paragraphs and lists */
+  font-family: courier, Helvetica, sans-serif;
+  font-size: 12;
+  color: white;
+}
+
+p2 {
+    font-family: courier, Helvetica, sans-serif;
+    color: white;
+    font-size: 12;
+}
+
+pwarning {
+    font-family: courier, Helvetica, sans-serif;
+    font-size: 14;
+    text-align: left;
+    color: red;
+}
+
+code_highlight {
+    font-family: courier;
+    font-size: 20;
+    text-align: center;
+    color: yellow;
+}
+
+.box {
+  width: 80%;
+  border: 15px solid orange;
+  padding: 50px;
+  margin: 20px;
+}
+#flash {
+  border: 15px dashed #c733ff;
+  width: 50%;
+}
+ul, ol {
+  width:70%;
+}
+
+links {
+	color: white;
+	font-family: courier, Helvetica, sans-serif;
+   	font-size: 14;
+    	text-align: left;
+}
+
+a {
+	color: orange;
+
+}
+a:visited {
+	color: red;
+}
+a:hover, a:active, a:focus {
+	color: red;
+}
+
+
+@keyframes example {
+  from {left: 0px;}
+  to {left: 200px;}
+}
+
+/* This is the only way to comment in CSS*/
