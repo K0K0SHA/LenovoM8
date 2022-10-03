@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rooting The Lenovo Tab M8 with Magisk</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyles.css">
+  </head>
+  <body>
+    <img src="./img/M8_Back.PNG">
+    <br>
+    <h1>Rooting a Lenovo Tab M8 2nd Generation using Magisk</h1>
+    <p> 	This blog describes a secure and efficient method to give your Lenovo Tab M8 root via Magisk. This guide will also work on any android device with an unlocked bootloader and available firmware! The Magisk Android rooting method has been thoroughly tested and documented by community hackers on r/androidroot. The community recommends the Magisk installation method for most roots even until now in Fall 2022. Please note that this root procedure was tested on the second generation, and it can almost certainly also be done on the third generation as well. I have sadly not been able to purchase the new hardware to experiment with. So for now, this blog is 100% certain to work only on the 2nd generation. I would still bet every Lenovo gadget that I have that this root method works on the Lenovo Tab M8 third generation.
+	<br><br><code_highlight>About the Tablet</code_highlight> <br><br>
+	The way I see it, when you root any Lenovo Tab M8, you are rooting a great tablet. The Lenovo M8 tablets aren't very fast, but they are built extremely well, and have practically no resource-draining bloatware. Lenovo knows how it's done. In any kind of outdoor scenario, the Lenovo Tab M8 is an amazing gadget. The rooted M8 non-sim version has no wireless hardware-level spyware, but it does have 2.4GHz and 5GHz networking as well as BT. The battery can last for weeks even when it's old (talk about adventuring). The screen is high resolution for videos and books. The design is stylish. The OEM takes care of the software. It fits right in your pocket almost like a phone. These characteristics make the Tab M8 a perfect hacker tablet. <br>
+	The only problem is that the CPU itself is actually a MediaTek with multiple known exploits, but who cares, right? Those exploits will probably never be used on your tablet if you're not the one using them. But if your Lenovo Tab M8 does get smashed, who cares? Because the best part is that they only cost ~$100 at Walmart. $120 for the new third generation M8. By the way, the Gen. 3 is better in every way, following Lenovo's evolution philosophy. Instead of 2Gb of RAM, it has 3. The CPU is faster, the camera is better. Everything is better.<br><br>
+
+
+
+<br<br><img src="./img/Magisk.png"><br> <code_highlight>About Magisk<br></code_highlight> <br>
+	Magisk Systemless Root Manager is a great root method because it works on basically any Android version, and it does not touch the /system/ partition. That's why some rooters refer to Magisk as "systemless". Magisk was originally designed in order to prevent the detection of root. The name still reflects that. The "Magic Mask" was originally designed to hide your root from Google. Since the creator of Magisk got hired by Google, he stopped emphasizing what he now called the "Magisk Hide" module, and instead turned Magisk into the rooting framework you can find on their GitHub today as of 9/30/2022.<br><br>
+        Magisk is completely free and open-source. No payment is required at any point in this blog. I do not own Magisk's source code, but I do maintain a Magisk Fork with the <a href="https://github.com/LSPosed/LSPosed">LSPosed Framework</a> on my secret hacker github.
+     
+    </p>
+    <img src = "./img/Android.jpg"> <br>
+    <h1>Official Download Links & More:</h1>    
+    <!-- paste important links here: -->
+    <p>Magisk official GitHub: <a href="https://github.com/topjohnwu/Magisk">https://github.com/topjohnwu/Magisk [github.com]</a><br><br>
+	Lenovo Rescue Tool/Firmware Download Utility:<a href="https://download.lenovo.com/consumer/mobiles/rescue_and_smart_assistant_v6.2.2.4_prod_setup.exe"> https://download.lenovo.com/consumer/mobiles/rescue_and_smart_assistant_v6.2.2.4_prod_setup.exe </a> <br><br>
+	Android Platform Tools: <a href="https://developer.android.com/studio/releases/platform-tools">https://developer.android.com/studio/releases/platform-tools</a> <br><br>
+	XDA Developer Forums: <a href="https://forum.xda-developers.com/t/lenovo-tab-m8-fhd-tb-8705f-how-to-root.4049691/">https://forum.xda-developers.com/t/lenovo-tab-m8-fhd-tb-8705f-how-to-root.4049691/</a> <a>
+	
+	</a>
+
+<br>
+
+</p>
+    
+    <h2> Introduction to Android Rooting </h2>
+    <p2> Rooting is the act of adding a su (switch user) binary to your Android device. Android uses (a) <a href="https://en.wikipedia.org/wiki/Linux_kernel">Linux Kernel</a>, so an Android with root is much like a desktop Linux distribution with the ability to use sudo. Many powerful networking utilities such as <a href="https://nmap.org/">nmap (by Fyodor Vaskovich)</a> have been ported to Android, yet they require root to run properly due to Android's permission system following separation and the principle of least access. For more info, check out <a href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">SELinux</a>. <br>
+        Aside from being able to perform a true port-scan with nmap on a rooted Android, hackers, devs, and modders have found many creative uses for a rooted Android to make it effectively <a href="https://www.reddit.com/r/androidroot/comments/unerc6/why_do_you_root_in_2022_discussion/">superior in function</a> to an ordinary Android. After all, any bozo gamer can overclock their PC's CPU. But your Android CPU? That's a real hacker.<br>
+	   Speaking of real hackers (advanced readers), if you've already rooted before then this should be a pretty simple process. It's easier than installing LineageOS, because the hardest part of the actual "rooting the tablet with Magisk part" of this blog is finding a non-sketchy version of the stock firmware. If you're familiar with Magisk, then you would understand the concept of stock firmware. Magisk needs a stock boot.img in order to patch. For more info, you can see the GitHub documentation of Magisk. Magisk needs the same boot.img as you have on your device. Users of certain Android phones may be out of luck here, but the Lenovo Tab M8 firmware may be located. Lenovo doesn't give it out freely, but the rescue utility can download it for you. <br>	 
+In order to find Lenovo Tab M8 firmware, you have to hack their Windows application which attempts to abstract the firmware file itself. Some banished Reddit hacker found that this application's attempts at obfuscation are primitive, almost as if Lenovo actually wants to encourage people who make it that far. <br>
+	I don't want to go off on a tangent about how Lenovo computers are as good as Toyota/Honda cars. That should be obvious. After all, it's my tablet of choice. 
+
+    </p2>
+<br>
+  <!-- unordered list example -->
+  <h2>Reasons to Root Your Lenovo Tab M8</h2>
+  <ul>
+      <li>Full access to the network interfaces, for utilities like nmap and tshark</li>
+      <li>Full access to the USB port, allowing the hacker to connect virtually any compatible USB device to their tablet</li>
+      <li>Full access to the disk, in order to truly delete any unwanted apps, such as Google spyware</li>
+	<li>Full disk access also allows full backup and transfer</li>
+      <li>Patching device drivers and the OS for increased security/functionality</li>
+      <li>Hacking mobile applications such as games, social media apps, etc.</li>
+      <li>Speeding up the OS by deleting bloatware and blocking ads on a system-DNS level</li>
+      <li>Running a true robust firewall on the Tablet</li>
+      <li>Hardware control such as controlling charging rhythms, and CPU over/underclocking</li>
+	<li> Advanced Disk-Wipe utilities</li>
+	<li> Full remote access</li>
+      <li>Hardware driver control for basically anything under the sun</li>
+	<li><a href="https://www.youtube.com/watch?v=alMsu_tfZPE&ab_channel=Hak5">Unlimited Free Hotspot Data</a></li>
+  </ul> 
+     
+    <h2>Preparation</h2>
+	<p>In order to perform the root precedure with Magisk yourself, the following things are required. Order of completion does not matter for this list: </p>
+		<ul>
+		<li>
+		A Lenovo Tab M8 with a USB-compatible cable running Magisk Manager application (available from F-Droid)
+		</li>
+		<li>
+		A Windows, Mac, or Linux computer running adb and fastboot, which can be downloaded with the <a href="https://developer.android.com/studio/releases/platform-tools">Android SDK/Platform Tools</a>. I personally use a Linux Mint Laptop and a Windows laptop for this lab. The reason for this is because the adb/fastboot on Windows may require special drivers unlike on Linux Mint. However, the Lenovo Firmware downloader requires Windows to run, although I suppose it might run in an emulator like Wine. So, on Windows the firmware downloader works better, and on Linux ADB/fastboot works better in the newer one.
+		<li>
+		The stock firmware for the Tablet. This is a directory which contains files like boot.img and vbmeta.img. You may download it online by googling a certain build number, or you may download the latest one using the Linux Rescue utility.
+		</li>
+		<li>
+	The Rescue/Smart Assistant if you want to download your firmware straight from Lenovo, which is the easiest way to ensure you're not getting hacked by some bootleg firmware. This assistant is required, and it also helps if you "hard brick" the tablet. It only works on Windows, but you can do everything that Smart Rescue can with fastboot anyway. I have not tested the LRSA on Linux.
+</ul> 
+
+	</li>
+	</p>
+	
+
+    <h2>Lenovo Tab M8 Root Procedure</h2>
+    <ol class="box">
+      <li>Before rooting, be sure to complete the Preparation section. It outlines what hardware and software you will need in order to root your Lenovo Tab M8. Once you have completed the Preparation section, you can get to work rooting. If you do not complete the Preparation section properly, you will have to install pre-requisites and download software as you go.
+      </li>
+      <li>Using your host PC, navigate to the directory where you downloaded your Lenovo Tab M8 firmware. This 
+          directory should contain boot.img, vbmeta.img, flash_all.sh, as well as other image files.
+      </li>
+      <li>From the firmware directory, transfer boot.img onto your Lenovo's internal storage. You may use adb push, cloud services, or an ordinary USB file transfer via MTP. 
+      </li>
+      <li>Patch your boot.img using Magisk Boot Manager. You will have to navigate Magisk Manager to the place on your Lenovo M8 where you saved boot.img. If this step succeeds, then Magisk should create a "patched" boot.img right in the same folder as boot.img
+      </li>
+      <li>Transfer your Magisk patched boot.img back to your host PC using ADB, a USB connection, or some cloud service</li>
+      <li>If you haven't plugged your Lenovo into your PC via USB, you must do attach it on this step. Also, if you haven't connected with ADB, you must do so right now. Install ADB as outlined in preparation, and run the following command: <br><code_highlight> adb devices -l </code_highlight> <br> Run that command until you see the tablet pop up, and allow the computer's RSA key on your tablet. You will likely have to run this twice, unless you are already running the adb daemon.
+        
+      </li>
+      <li>Use ADB to reboot the tablet into fastboot mode (you may need sudo):      <code_highlight> sudo adb -d reboot fastboot</code_highlight> </li>
+      <li>Once your Lenovo is in fastboot mode, ensure that fastboot is working properly:  <code_highlight> sudo fastboot devices</code_highlight>  </li>
+      <li>Once fastboot mode is working, unlock the bootloader using this command: <br> <code_highlight>fastboot flashing unlock</code_highlight> </li>
+	 <li>Follow the on-screen prompts on the tablet to unlock bootloader. You know you are successful if you enter orange-mode upon start.
+	</li>
+	<li> Reboot the tablet into fastboot again: <br> <code_highlight> adb -d reboot fastobot </code_highlight>
+	</li>
+	<li> Flash vbmeta with fastboot in order to disable verified boot: <code_highlight> fastboot flash vbmeta --disable-verification ./vbmeta.img </code_highlight></li>
+	</li>
+	<li>
+	Finally, flash Magisk to your device, and for the love of God remember the <code_highlight>--disable-verification</code_highlight> flag: <code_highlight>fastboot flash boot ./magisk_patched_boot.img --disable-verification </code_highlight>
+	</li>
+	<li>
+	After booting in, you may verify that Magisk is installed by running adb -d shell and using sudo. If your tablet shows Magisk manager asking for su privileges, then you have root.
+	</li>
+
+    </ol>
+    <br>
+    <br>
+    <h1>Magisk Security Concerns:</h1>   
+    <pwarning> CAUTION! MAGISK IS NOT FOR PRIVACY! MAGISK WEAKENS YOUR ANDROID OS's DEFENSES SIGNIFICANTLY, ALLOWING THE SINGLE COMPROMISE POINT OF MAGISK MANAGER TO BE A COMPLETE AND UTTER PWN!</pwarning> <br>
+    <img src="./img/catastrophe.png">
+    <p> Because a su binary (aka root) undermines the Android OS security architecture, rooting is widely considered to be dangerous due to increasing your tablet's attack surface. Android is designed to separate and protect confidential user data, but a su binary can overcome these protections. Thus, any executable that is ever given root access on an Android can effectively access any data on the device. It is not recommended to store sensitive information on a rooted Tablet, or to give random apps root access. <br>
+	   Besides having to worry about hackers with a rooted tablet, the user should always worry about themselves. That's what they forget. You are actually far more likely to crash the tablet rooting. To make things even more dangerous, root allows full destruction of the tablet just like it allows full backup. Keep that concept in mind.<br>  
+        Personally, I only give root to Termux and adb shell. Even so, I know that Magisk Manager itself is open-source, and the code is known to have exploits in the wild. <br>
+	   Because Magisk Allows full pwn on Android through running an executable, a rooted (or unrooted) M8 is not a good tablet to give to a child or even an average person. Running a certain executable on this tablet allows full pwn even if the user doesn't have Magisk installed. At that point, other aspects of the Android security configuration should come into play, such as verified boot, verified installation, etc. However, if the app is rooted then in the best case scenario, you probably get reset or hard bricked. In the worst, you get hacked. 
+<br>
+
+<a href="https://twitter.com/topjohnwu"><p style="background-color:white;">John Wu's Twitter Page</p></a><p> John Wu aka topjohnwu the Magisk Creator (and my former role-model) has worked at Google and Apple, those companies surely do have exploits to Magisk. Average hackers in the wild certainly do too. Believe me. After all, the source code to Magisk is on GitHub.
+    </p>
+    <p>
+        Due to the inherent risks of rooting outlined at the bottom of the page, it is recommended to understand one's own reason(s) for gaining root access to your Android. After all, there is a reason why almost every phone and tablet on the market will attempt to resist being rooted. Phone-makers don't really want you to be rooting because it's unsafe. <br>
+        In other words, if you are just a n00b who wants root on your M8 just to hack some game, you will probably get hacked yourself. In order to use a rooted device securely, think of a Linux Box where you want to ensure the source code of any executables that you run, especially as su. This is where experience with Linux comes into play.<pwarning>Do NOT just give root to random apps! I recommend only using root on Termux and ADB-shell.</pwarning>
+    </p>
+    <h2>If You Came Here Looking For Advice On Lineage for The Lenovo Tab M8</h2>
+<br>
+  <a href="https://lineageos.org/"><img src="img/Lineage.jpg">> </a>
+<br>
+<p>
+I don't have any info model-specific info yet as of 9/30/2022. Discussions on LineageOS may be found on XDA Developer forums, r/LineageOS, and other places. Many tech-savvy people do prefer using LineageOS on their devices and rooting that way. This eliminates reliance on Magisk. This blog does not cover LineageOS in-depth, although I did have a 1 on 1 conversation with a LineageOS developer once. He said that su binaries exist for Lineage (obviously), but he does not recommend running one because it compromises security. When I pressed him about running utilities such as nmap, he said that he disagrees that nmap even needs root to run on Android. At the time, that contradicted what I thought I knew. Still on the topic of nmap, the dev said that all you need to do is use adb shell configure the permissions for nmap to have access to the network card. I remembered what I learned about permissions in Linux class, and remembered that all I needed was indeed the adb shell instead of complete root. <code_highlight><br>Adb -d shell</code_highlight> is actually better because then you can have an Android terminal in your Laptop. It works unrooted too, but you don't have many permissions. That's the point of Android after all. As secure as they can make it. <br>
+But none of that matters. None of this matters if you're on Lineage. Lineage does its own thing. This is not a discussion about Lineage. <pwarning>Don't use this guide if you're going the Lineage route, and good luck to you.</pwarning> I'm going to throw Lineage on my Gen. 2 as soon as I buy a Gen. 3 Lenovo Tab M8. <br>
+</p>
+    <h2>Non-Lenovo Android Users</h2>
+    <p> This guide works in theory on any device. In practice, you face two main issues when you try to root a phone with Magisk. Aside from unlocking the bootloader (enabling fastboot), your main challenge is finding the stock boot.img from your firmware. I've found this to be very easy on certain phones like the Google Pixel where the <a href="https://developers.google.com/android/images">firmware is hosted directly on Google's website,</a>, but very difficult on other phones like the Alcatel A30. If you happen to have a phone like the Alcatel A30, which is designed to have un-deletable bloatware and adware, then finding boot.img tends to be difficult. You have to actually hack that type of phone. <br>
+	One way I know for installing Magisk Manager root on a tablet where you cannot get the stock boot.img from the manufacturer involves performing a CPU exploit to get root in another way. From that point, you can use a utility such as <code_highlight>dd</code_highlight> in order to copy the Android's disk and get the firmware that way. Of course, if you already have root, then you're really just installing Magisk Manager at that point. I've also heard of hackers booting Androids from some kind of live USB like you would a PC when installing a Linux Distro.
+
+
+    <footer>Author: K0K0$H@ of GitHub<a></a></footer>
+  </body>
+</html>
+
+<!-- use this tool to generate hyperlinks: https://webcode.tools/generators/html/hyperlink -->
+<!-- research based on this project (by me 2 years ago): https://www.reddit.com/r/androidroot/comments/l6qasc/how_i_rooted_my_lenovo_tab_m8_research_on_mtk/ -->
