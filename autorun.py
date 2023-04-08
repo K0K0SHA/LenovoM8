@@ -3,11 +3,6 @@ import os
 import platform
 import subprocess
 
-def check_dependencies():
-    if ()
-    else:
-        print("Your device does not have the required dependencies to fully automate the Lenovo Tab M8 firmware download.") 
-        return false
 def inquire(prompt):
     user_input = input(prompt + "\ntype Y to confirm)
     bool_input = (input.lower() == 'y')
