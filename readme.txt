@@ -3,3 +3,4 @@ For a detailed guide on rooting the Tab M8, fork the repo and click on index.htm
 
 TODO: semi/full automation
 TODO: miscX check for wget
+TODO: upload official firmware  
